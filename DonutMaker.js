@@ -36,6 +36,8 @@ class DonutMaker {
     getAutoClickerCost() {
         return this.autoClickerCost;
     }
+    increaseAutoClickerCost() {
+        this.autoClickerCost = this.autoClickerCost * 1.1;
 }
-
+}
 export default DonutMaker;
