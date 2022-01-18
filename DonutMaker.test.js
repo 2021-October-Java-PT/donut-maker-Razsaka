@@ -108,4 +108,25 @@ describe('DonutMaker', () => {
 
         expect(underTest.getDonutMultipierCount()).toEqual(count);
     })
+
+    test('can increase the amount of donut added to the donut count by multiplying by 1.2 after the first Donut Multiplier is purchased', () => {
+        const underTest = new DonutMaker();
+        const previousDonutCount = underTest.getDonutCount();
+        underTest.donutCount = underTest.donutMultiplierCost;
+        underTest.purchaseDonutMultiplier();
+        underTest.addToDonutCount();
+
+        expect(underTest.getDonutCount()).toEqual(previousDonutCount + 1.2);
+    })
+
+    test('can increase the click value multipler to 1.2 to the xth power, where X is the amount of the Donut Multipliers count', () => {
+        const underTest = new DonutMaker();
+        const previousDonutCount = underTest.getDonutCount();
+        underTest.donutCount = underTest.donutMultiplierCost * 3;
+        
+        underTest.purchaseDonutMultiplier();
+        underTest.purchaseDonutMultiplier();
+
+        expect(underTest.donutMultiplierValue).toEqual(Math.pow(1.2, 2));
+    })
 })
