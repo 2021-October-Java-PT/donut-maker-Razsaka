@@ -1,0 +1,119 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0 20px;
+    background-color: azure;
+    color: #693b30;
+}
+
+
+header {
+    background-color: bisque;
+    color: grey;
+    font-family:  sans-serif;
+};
+
+
+
+h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: rgb(0, 153, 255);
+}
+
+.cookie {
+    height: 15rem;
+    width: auto;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+#github,#linkedin,#Email{
+    max-width: 40px;
+
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.donut-count {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+
+
+
+
+
+#nav-links {
+    display: flex;
+    margin-left: 0px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.nav-link-item {
+    margin-right: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+  }
+  
+  button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }
+  
+  .reset-div {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .popup {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    display: none;
+  }
+
+  .popup-inner {
+    padding: 15px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: white;
+  }
+
+  .popup-inner a {
+    display: inline-block;
+  }
+
+  .donutButton {
+    width: 60px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .section {
+    display: flex;
+  }
+
+  .section div {
+    margin-right: 25px;
+  }

@@ -101,12 +101,12 @@ describe('DonutMaker', () => {
 
     test('prevent the Donut Multiplier count from going up if there are not enough clicks to purchase a Donut Multiplier', () => {
         const underTest = new DonutMaker();
-        const count = underTest.getDonutMultipierCount();
+        const count = underTest.getDonutMultiplierCount();
         expect(underTest.getDonutCount()).toBeLessThan(underTest.getDonutMultiplierCost());
 
         underTest.purchaseDonutMultiplier();
 
-        expect(underTest.getDonutMultipierCount()).toEqual(count);
+        expect(underTest.getDonutMultiplierCount()).toEqual(count);
     })
 
     test('can increase the amount of donut added to the donut count by multiplying by 1.2 after the first Donut Multiplier is purchased', () => {
@@ -121,12 +121,22 @@ describe('DonutMaker', () => {
 
     test('can increase the click value multipler to 1.2 to the xth power, where X is the amount of the Donut Multipliers count', () => {
         const underTest = new DonutMaker();
-        const previousDonutCount = underTest.getDonutCount();
         underTest.donutCount = underTest.donutMultiplierCost * 3;
         
         underTest.purchaseDonutMultiplier();
         underTest.purchaseDonutMultiplier();
 
         expect(underTest.donutMultiplierValue).toEqual(Math.pow(1.2, 2));
+    })
+
+    test("When an 'Add Auto Clickers' event is executed, increase the value of each Auto Clicker by the amount of the Donut Multiplier.", () => {
+        const underTest = new DonutMaker();
+        const previousDonutCount = underTest.getDonutCount();
+        underTest.autoClickerCount = 3;
+        underTest.donutMultiplierCount = 1
+        underTest.donutMultiplierValue = 1.2;
+
+        underTest.addToDonutCount(true);
+        expect(underTest.getDonutCount()).toEqual(previousDonutCount + underTest.getAutoClickerCount() * underTest.donutMultiplierValue)
     })
 })
