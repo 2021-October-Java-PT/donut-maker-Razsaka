@@ -1,3 +1,5 @@
+import DonutMaker from './DonutMaker.js'
+
 let donutMaker = new DonutMaker();
 const clickButton = document.getElementById('click-button');
 const donutClickButton = document.getElementById('donut-click-button');

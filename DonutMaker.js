@@ -86,3 +86,5 @@ class DonutMaker {
         return this.donutMultiplierValue;
     }
 }
+
+export default DonutMaker;
